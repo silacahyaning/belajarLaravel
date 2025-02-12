@@ -11,6 +11,7 @@
 </head>
 <body>
 <h1>ini halaman home</h1>
+nama saya <u>{{$nama}}</u>
 </body>
 </html>
 @endsection

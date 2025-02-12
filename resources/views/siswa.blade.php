@@ -15,7 +15,7 @@
         <th>Menu</th>
     </tr>
 
-
+  {{-- foreach adalah perulangan   (['nama'] menggunakan kurung kotak karena dia array)--}}
     @foreach ($siswa as $item)
     <tr>
         <td>{{$loop->iteration}}</td>
@@ -27,8 +27,8 @@
             @method('DELETE')
             @csrf
            <button class="btn btn-danger" type="submit">HAPUS</button>
+           <a class="btn btn-primary" href="{{ Route('siswa.edit', $item['id']) }}">EDIT</a>
         </form>
-          <a class="btn btn-primary" href="{{Route('siswa.edit',$item['id'])}}">EDIT</a>
 
     </td>
     </tr>
