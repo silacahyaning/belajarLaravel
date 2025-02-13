@@ -10,10 +10,24 @@
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nama</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="masukkan nama" name="nama" value="{{$data['nama']}}">
+
+            @error('nama')
+            <small class="text-danger">
+                {{ $message }}
+            </small>
+            @enderror
+
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="masukkan alamat" name="alamat"  rows="3" >{{$data['alamat']}}</textarea>
+
+            @error('alamat')
+            <small class="text-danger">
+                {{ $message }}
+            </small>
+            @enderror
+
         </div>
         <div class="mb-3">
             <div class="form-check">
@@ -28,6 +42,12 @@
                   perempuan
                 </label>
               </div>
+
+              @error('jenis_kelamin')
+              <small class="text-danger">
+                  {{ $message }}
+              </small>
+              @enderror
         </div>
         <div class="mb-3"> <button type="submit" class="btn btn-success">edit</button></div>
     </div>

@@ -69,6 +69,16 @@ class SiswaController extends Controller
 
         public function update( Request $request, $id){
 
+            $validated = $request->validate([
+                'nama'=>'required',
+                'alamat'=>'required',
+                'jenis_kelamin'=>'required',
+            ],[
+                'nama.required'=>'nama harus diisi',
+                'alamat.required'=>'alamat harus diisi',
+                'jenis_kelamin.required'=>'Jenis kelamin harus diisi',
+            ]);
+
             // FindOrFail berfungsi untuk memastikan bahwa data dengan id yang diberikan ada di database.
             $data=Student::findOrFail($id);
 
